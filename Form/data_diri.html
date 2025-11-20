@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data Diri</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+           <form onsubmit="saveData()" action="kuesioner.html" method="GET">
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="nama" class="formbold-form-label">Nama Lengkap Anda</label>
+                        <input type="text" name="nama" id="nama" placeholder="Nama Anda" class="formbold-form-input"
+                            required />
+                    </div>
+                    <div>
+                        <label for="prodi" class="formbold-form-label">Prodi Anda</label>
+                        <input type="text" name="prodi" id="prodi" placeholder="Prodi" class="formbold-form-input"
+                            required />
+                    </div>
+                </div>
+
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="email" class="formbold-form-label">Email Aktif Anda</label>
+                        <input type="email" name="email" id="email" placeholder="Contoh@mail.com"
+                            class="formbold-form-input" required />
+                    </div>
+                    <div>
+                        <label for="nomor" class="formbold-form-label">No. WhatsApp Anda</label>
+                        <input type="text" name="nomor" id="nomor" placeholder="+62 8112233" class="formbold-form-input"
+                            required />
+                    </div>
+                </div>
+
+                <button type="submit" class="formbold-btn">Lanjut ke Kuesioner</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function saveData() {
+        const nama = document.getElementById("nama").value;
+        const prodi = document.getElementById("prodi").value;
+        const email = document.getElementById("email").value;
+        const nomor = document.getElementById("nomor").value;
+
+        // Simpan ke localStorage
+        localStorage.setItem("nama", nama);
+        localStorage.setItem("prodi", prodi);
+        localStorage.setItem("email", email);
+        localStorage.setItem("nomor", nomor);
+    }
+</script>
